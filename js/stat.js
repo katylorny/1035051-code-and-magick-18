@@ -1,3 +1,5 @@
+'use strict';
+
 var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
 var CLOUD_X = 100;
@@ -44,9 +46,8 @@ window.renderStatistics = function (ctx, names, times) {
     var barHeight = HISTOGRAM_HEIGHT * times[i] / maxTime;
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-    }
-    else {
-      ctx.fillStyle = 'hsl(240, ' + Math.random() * 100 +  '%, 50%)';
+    } else {
+      ctx.fillStyle = 'hsl(240, ' + Math.random() * 100 + '%, 50%)';
     }
 
     ctx.fillRect(zeroX + (BAR_WIDTH + BAR__GAP) * i, zeroY, BAR_WIDTH, -barHeight);
