@@ -19,7 +19,7 @@ var eyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
 
 
 var selectRandomNumber = function (arr) {
-  return Math.round((arr.length - 1) * Math.random());
+  return Math.floor((arr.length) * Math.random());
 };
 
 var createWizard = function (namesArr, surnamesArr, coatColorsArr, eyesColorsArr) {
