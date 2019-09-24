@@ -23,11 +23,11 @@ var getRandomNumber = function (max) {
 };
 // выбирает случайное число от 0 до max
 
-var createWizard = function (namesArr, surnamesArr, coatColorsArr, eyesColorsArr) {
+var createWizard = function () {
   return {
-    name: namesArr[getRandomNumber(namesArr.length)] + ' ' + surnamesArr[getRandomNumber(surnamesArr.length)],
-    coatColor: coatColorsArr[getRandomNumber(coatColorsArr.length)],
-    eyesColor: eyesColorsArr[getRandomNumber(eyesColorsArr.length)]
+    name: names[getRandomNumber(names.length)] + ' ' + surnames[getRandomNumber(surnames.length)],
+    coatColor: coatColors[getRandomNumber(coatColors.length)],
+    eyesColor: eyesColors[getRandomNumber(eyesColors.length)]
   };
 };
 
@@ -36,7 +36,7 @@ setupSimilar.classList.remove('hidden');
 
 var wizards = [];
 for (var i = 0; i < NUMBER_OF_WIZARDS; i++) {
-  wizards[i] = createWizard(names, surnames, coatColors, eyesColors);
+  wizards[i] = createWizard();
 }
 
 var createDomElement = function (wizard) {
