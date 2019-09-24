@@ -18,16 +18,17 @@ var coatColors = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)
 var eyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
 
 
-var selectRandomNumber = function (arr) {
-  return Math.floor((arr.length) * Math.random());
+var getRandomNumber = function (max) {
+  return Math.floor(max * Math.random());
 };
+// выбирает случайное число от 0 до max
 
 var createWizard = function (namesArr, surnamesArr, coatColorsArr, eyesColorsArr) {
-  var wizard = {};
-  wizard.name = namesArr[selectRandomNumber(names)] + ' ' + surnamesArr[selectRandomNumber(surnames)];
-  wizard.coatColor = coatColorsArr[selectRandomNumber(coatColors)];
-  wizard.eyesColor = eyesColorsArr[selectRandomNumber(eyesColors)];
-  return wizard;
+  return {
+    name: namesArr[getRandomNumber(namesArr.length)] + ' ' + surnamesArr[getRandomNumber(surnamesArr.length)],
+    coatColor: coatColorsArr[getRandomNumber(coatColorsArr.length)],
+    eyesColor: eyesColorsArr[getRandomNumber(eyesColorsArr.length)]
+  };
 };
 
 wizardForm.classList.remove('hidden');
