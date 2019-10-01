@@ -77,18 +77,20 @@ var getRandomArrayElement = function (arr) {
 };
 // выбирает случайный элемент из массива
 
+var onEscPress = function (evt) {
+  if (evt.keyCode === ESC_KEYCODE) {
+    setup.classList.add('hidden');
+  }
+};
+
 var openPopup = function () {
   setup.classList.remove('hidden');
-
-  document.addEventListener('keydown', function (evt) {
-    if (evt.keyCode === ESC_KEYCODE) {
-      setup.classList.add('hidden');
-    }
-  });
+  document.addEventListener('keydown', onEscPress);
 };
 
 var closePopup = function () {
   setup.classList.add('hidden');
+  document.removeEventListener('keydown', onEscPress)
 };
 
 // var changeCoatColor = function () {
