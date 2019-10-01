@@ -90,7 +90,7 @@ var openPopup = function () {
 
 var closePopup = function () {
   setup.classList.add('hidden');
-  document.removeEventListener('keydown', onEscPress)
+  document.removeEventListener('keydown', onEscPress);
 };
 
 // var changeCoatColor = function () {
