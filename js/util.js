@@ -3,7 +3,7 @@
   window.util = {
     ESC_KEYCODE: 27,
     ENTER_KEYCODE: 13,
-    setup: document.querySelector('.setup'),
+
 
     getRandomNumber: function (max) {
       return Math.floor(max * Math.random());

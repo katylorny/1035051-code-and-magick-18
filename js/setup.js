@@ -1,15 +1,21 @@
 'use strict';
 
 (function () {
+
   window.setupE = {
+    setupG: document.querySelector('.setup'),
     eyesColors: ['black', 'red', 'blue', 'yellow', 'green'],
-    setupWizard: window.util.setup.querySelector('.setup-wizard'),
+
+    // setupWizard: window.setupE.setupG.querySelector('.setup-wizard'), // - это не работает!
+    setupWizard: document.querySelector('.setup').querySelector('.setup-wizard'), // это работает
+
     coatColors: ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'],
     setupOpen: document.querySelector('.setup-open'),
-    setupClose: window.util.setup.querySelector('.setup-close'),
+    setupClose: document.querySelector('.setup').querySelector('.setup-close'),
     setupIcon: document.querySelector('.setup-open-icon'),
-    setupUserName: window.util.setup.querySelector('.setup-user-name'),
+    setupUserName: document.querySelector('.setup').querySelector('.setup-user-name'),
   };
+  // console.log(window.setupE.setupG.querySelector('.setup-wizard')); // здесь его видно нормально
 
   var NUMBER_OF_WIZARDS = 4;
   var fragment = document.createDocumentFragment();
