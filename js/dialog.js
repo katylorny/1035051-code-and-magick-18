@@ -4,12 +4,12 @@
 
   var onEscPress = function (evt) {
     if (evt.keyCode === window.util.ESC_KEYCODE) {
-      window.setupE.setupG.classList.add('hidden');
+      window.setup.setupPopup.classList.add('hidden');
     }
   };
 
   var openPopup = function () {
-    window.setupE.setupG.classList.remove('hidden');
+    window.setup.setupPopup.classList.remove('hidden');
     document.addEventListener('keydown', onEscPress);
   };
 
@@ -18,33 +18,33 @@
     document.removeEventListener('keydown', onEscPress);
   };
 
-  window.setupE.setupOpen.addEventListener('click', function () {
+  window.setup.setupOpen.addEventListener('click', function () {
     openPopup();
   });
 
-  window.setupE.setupClose.addEventListener('click', function () {
+  window.setup.setupClose.addEventListener('click', function () {
     closePopup();
   });
 
-  window.setupE.setupOpen.addEventListener('keydown', function (evt) {
+  window.setup.setupOpen.addEventListener('keydown', function (evt) {
     if (evt.keyCode === window.util.ENTER_KEYCODE) {
       openPopup();
     }
   });
 
-  window.setupE.setupClose.addEventListener('keydown', function (evt) {
+  window.setup.setupClose.addEventListener('keydown', function (evt) {
     if (evt.keyCode === window.util.ENTER_KEYCODE) {
       closePopup();
     }
   });
 
-  window.setupE.setupUserName.addEventListener('keydown', function (evt) {
+  window.setup.setupUserName.addEventListener('keydown', function (evt) {
     if (evt.keyCode === window.util.ESC_KEYCODE) {
       event.stopPropagation();
     }
   });
 
-  var dialogHandler = window.setupE.setupG.querySelector('.upload');
+  var dialogHandler = window.setup.setupPopup.querySelector('.upload');
 
   dialogHandler.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
@@ -70,8 +70,8 @@
         y: moveEvt.clientY,
       };
 
-      window.setupE.setupG.style.left = (window.setupE.setupG.offsetLeft - shift.x) + 'px';
-      window.setupE.setupG.style.top = (window.setupE.setupG.offsetTop - shift.y) + 'px';
+      window.setup.setupPopup.style.left = (window.setup.setupPopup.offsetLeft - shift.x) + 'px';
+      window.setup.setupPopup.style.top = (window.setup.setupPopup.offsetTop - shift.y) + 'px';
     };
 
     var onMouseUp = function (upEvt) {

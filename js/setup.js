@@ -1,21 +1,21 @@
 'use strict';
 
 (function () {
-
-  window.setupE = {
-    setupG: document.querySelector('.setup'),
+  window.setup = {
+    setupPopup: document.querySelector('.setup'),
     eyesColors: ['black', 'red', 'blue', 'yellow', 'green'],
-
-    // setupWizard: window.setupE.setupG.querySelector('.setup-wizard'), // - это не работает!
-    setupWizard: document.querySelector('.setup').querySelector('.setup-wizard'), // это работает
-
+    // setupWizard: window.setup.setupPopup.querySelector('.setup-wizard'), // - это не работает!
+    // setupWizard: document.querySelector('.setup').querySelector('.setup-wizard'), // это работает
     coatColors: ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'],
     setupOpen: document.querySelector('.setup-open'),
-    setupClose: document.querySelector('.setup').querySelector('.setup-close'),
     setupIcon: document.querySelector('.setup-open-icon'),
-    setupUserName: document.querySelector('.setup').querySelector('.setup-user-name'),
   };
-  // console.log(window.setupE.setupG.querySelector('.setup-wizard')); // здесь его видно нормально
+
+  window.setup.setupWizard = window.setup.setupPopup.querySelector('.setup-wizard');
+  window.setup.setupClose = window.setup.setupPopup.querySelector('.setup-close');
+  window.setup.setupUserName = window.setup.setupPopup.querySelector('.setup-user-name');
+
+  // console.log(window.setup.setupPopup.querySelector('.setup-wizard')); // здесь его видно нормально
 
   var NUMBER_OF_WIZARDS = 4;
   var fragment = document.createDocumentFragment();
@@ -28,8 +28,8 @@
   var createWizard = function () {
     return {
       name: names[window.util.getRandomNumber(names.length)] + ' ' + surnames[window.util.getRandomNumber(surnames.length)],
-      coatColor: window.setupE.coatColors[window.util.getRandomNumber(window.setupE.coatColors.length)],
-      eyesColor: window.setupE.eyesColors[window.util.getRandomNumber(window.setupE.eyesColors.length)]
+      coatColor: window.setup.coatColors[window.util.getRandomNumber(window.setup.coatColors.length)],
+      eyesColor: window.setup.eyesColors[window.util.getRandomNumber(window.setup.eyesColors.length)]
     };
   };
   setupSimilar.classList.remove('hidden');
