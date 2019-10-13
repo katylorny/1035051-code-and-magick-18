@@ -11,6 +11,7 @@
   var openPopup = function () {
     window.setup.setupPopup.classList.remove('hidden');
     document.addEventListener('keydown', onEscPress);
+
   };
 
   var closePopup = function () {
